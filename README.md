@@ -1,7 +1,9 @@
 ==ionic-public-forum-announcements==
+
 This is a forum/announcements starter you can use. The public forum allows anyone to post for everyone to see. The announcements lets you and any user you create to post, and should be used with the backend I have created.
 
 ===Setup===
+
 Setup is easy. Every line where you see `<YOUR-FIREBASE-APP>`, just replace it with the firebase URL prefix. For example, if my firebase url were https://my-app.firebaseio.com, I would change ever instance of `<YOUR-FIREBASE-APP>` to my-app.
 
 ===Customization===
