@@ -4,7 +4,7 @@
       <ion-item collection-repeat="announcement in announcement.announcements.slice().reverse()" ui-sref="announcement({announcementId:announcement.$id})">
         <p ng-bind-html="announcement.content"></p>
         <br>
-        <small>by {{announcement.author}} && {{announcement.$id}}</small>
+        <small>by {{announcement.author}}</small>
       </ion-item>
     </ion-list>
   </ion-content>
