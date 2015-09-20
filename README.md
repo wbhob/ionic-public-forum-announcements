@@ -11,7 +11,7 @@ Setup is easy. Every line where you see `<YOUR-FIREBASE-APP>`, just replace it w
 Customization
 -------------
 
-If you want to use the announcements (no public posting), go into app.js and change line 28 to `$urlRouterProvider.otherwise("/announcements");`. If you want to use public posting, use `$urlRouterProvider.otherwise("/posts");`. Announcements must be used with the dashboard.
+If you want to use the announcements (no public posting), go into app.js and change line 28 to `$urlRouterProvider.otherwise("/announcements");`. If you want to use public posting, use `$urlRouterProvider.otherwise("/posts");`. Announcements must be used with the <a href="https://github.com/wilsonhobbs/ionic-public-forum-announcements-dashboard">dashboard</a>.
 
 Disabling comments is easy. Just go into `templates/announcements.html` or `templates/posts.html`, and remove the `ui-sref=""` on the ion-item tag. 
 
