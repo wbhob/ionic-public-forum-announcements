@@ -1,0 +1,20 @@
+<ion-view view-title="Posts">
+  <ion-content>
+    <div class="card padding">
+      <textarea ng-model="posts.newPost" style="width:100%;height:100px" placeholder="Put your comment here..."></textarea>
+      <br>
+      <br>
+      <button class="button-block button button-positive" ng-click="posts.post()">Submit</button>
+    </div>
+    <ion-list>
+      <ion-item collection-repeat="post in posts.posts.slice().reverse()" ui-sref="post({postId: post.$id})">
+        {{post.content}}
+        <br>
+        <small>by {{post.author}}</small>
+      </ion-item>
+    </ion-list>
+    <!--<pre>
+      <code>{{ posts | json }}</code>
+    </pre>-->
+  </ion-content>
+</ion-view>

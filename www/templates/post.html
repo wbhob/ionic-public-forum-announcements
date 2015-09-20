@@ -1,0 +1,25 @@
+<ion-view>
+  <ion-content>
+    <div class="card padding">
+      {{post.post.content}}
+      <br>
+      <small>by {{post.post.author}}</small>
+    </div>
+    <div class="card padding">
+      <textarea ng-model="post.newComment" style="width:100%;height:100px" placeholder="Put your comment here..."></textarea>
+      <br>
+      <br>
+      <button class="button-block button button-positive" ng-click="post.submitComment()">Submit</button>
+    </div>
+    <ion-list>
+      <ion-item collection-repeat="comment in post.comments.slice().reverse()">
+        {{comment.content}}
+        <br>
+        <small>by {{comment.author}}</small>
+      </ion-item>
+    </ion-list>
+    <!--<pre>
+      <code>{{ post | json }}</code>
+    </pre>-->
+  </ion-content>
+</ion-view>
