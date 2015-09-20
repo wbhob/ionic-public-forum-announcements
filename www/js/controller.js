@@ -2,7 +2,7 @@ angular.module("comments.controllers", ["firebase"])
 
 .controller("PostsCtrl", function($firebaseArray) {
 		var vm = this;
-		var postsRef = new Firebase("https://lovett-test.firebaseio.com/posts/");
+		var postsRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/posts/");
 		vm.posts = $firebaseArray(postsRef);
 		console.log('Instantiated');
 		vm.post = function() {
@@ -11,7 +11,7 @@ angular.module("comments.controllers", ["firebase"])
 			if (vm.newPost) {
 				vm.posts.$add({
 					"content": vm.newPost,
-					"author": "Wilson"
+					"author": "" //Name; to use a name field, just add a field and ng-model it to vm.name and reference it here.
 				});
 			}
 
@@ -20,10 +20,10 @@ angular.module("comments.controllers", ["firebase"])
 	})
 	.controller("PostCtrl", function($firebaseArray, $firebaseObject, $state) {
 		var vm = this;
-		var commentsRef = new Firebase("https://lovett-test.firebaseio.com/posts/" + $state.params.postId + "/comments");
+		var commentsRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/posts/" + $state.params.postId + "/comments");
     vm.comments = $firebaseArray(commentsRef);
 
-    var postRef = new Firebase("https://lovett-test.firebaseio.com/posts/" + $state.params.postId);
+    var postRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/posts/" + $state.params.postId);
     vm.post = $firebaseObject(postRef);
 
 		vm.submitComment = function() {
@@ -32,7 +32,7 @@ angular.module("comments.controllers", ["firebase"])
 			if (vm.newComment) {
 				vm.comments.$add({
 					"content": vm.newComment,
-					"author": "Wilson"
+					"author": "" //Name; to use a name field, just add a field and ng-model it to vm.name and reference it here.
 				});
 			}
       vm.newComment = "";
@@ -40,7 +40,7 @@ angular.module("comments.controllers", ["firebase"])
 	})
   .controller("AnnouncementsCtrl", function($firebaseArray, $sanitize) {
   		var vm = this;
-  		var announceRef = new Firebase("https://lovett-test.firebaseio.com/announcements/");
+  		var announceRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/announcements/");
   		vm.announcements = $firebaseArray(announceRef);
   		console.log('Instantiated');
       vm.sanitize = function(string) {
@@ -49,10 +49,10 @@ angular.module("comments.controllers", ["firebase"])
   	})
     .controller("AnnouncementCtrl", function($firebaseArray, $firebaseObject, $state) {
   		var vm = this;
-  		var announcecommentRef = new Firebase("https://lovett-test.firebaseio.com/announcements/" + $state.params.announcementId + "/comments");
+  		var announcecommentRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/announcements/" + $state.params.announcementId + "/comments");
       vm.comments = $firebaseArray(announcecommentRef);
 
-      var announcementRef = new Firebase("https://lovett-test.firebaseio.com/announcements/" + $state.params.announcementId);
+      var announcementRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/announcements/" + $state.params.announcementId);
       vm.announcement = $firebaseObject(announcementRef);
 
   		vm.submitComment = function() {
@@ -61,8 +61,8 @@ angular.module("comments.controllers", ["firebase"])
   			if (vm.newComment) {
   				vm.comments.$add({
   					"content": vm.newComment,
-  					"author": "Wilson"
-  				});
+  					"author": "" //Name; to use a name field, just add a field and ng-model it to vm.name and reference it here.
+					});
   			}
         vm.newComment = "";
   		}
