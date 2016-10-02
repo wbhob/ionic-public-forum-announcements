@@ -39,4 +39,4 @@ angular.module('comments', ['ionic', "firebase", "comments.controllers"])
 			StatusBar.styleDefault();
 		}
 	});
-})
+});
